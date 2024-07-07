@@ -7,9 +7,14 @@ import { Character } from "../Pages/Characters/Character"
 import { Planets } from "../Pages/Planets/Planets"
 import { SelectionFavorite } from "../Pages/Selection/SelectionFavorite"
 import { NotFound } from "../Pages/NotFound/NotFound"
+import { useAuth } from "../Context/AuthContext"
+import { ProtectedRoute } from "./Protected/ProtectedRoute"
 
 export const Rutas=()=>{
-
+    const { loading } = useAuth();
+    if (loading) {
+        return <div>Cargando...</div>;
+    }
     return(
         <>
             <BrowserRouter>
@@ -20,12 +25,12 @@ export const Rutas=()=>{
                     <Route path="/login" element={<Login/>} />
                     <Route path="/registro" element={<Registro />} />
                     {/* Rutas para usuario logueado */}
-                    <Route path="/home" element={<Layout><Home/></Layout>} />
-                    <Route path="/personajes" element={<Layout><Character/></Layout>} />
-                    <Route path="/planetas" element={<Layout><Planets/></Layout>} />
-                    <Route path="/favoritos" element={<Layout><SelectionFavorite/></Layout>} />
+                    <Route path="/home" element={<ProtectedRoute><Layout><Home/></Layout></ProtectedRoute>} />
+                    <Route path="/personajes" element={<ProtectedRoute><Layout><Character/></Layout></ProtectedRoute>} />
+                    <Route path="/planetas" element={<ProtectedRoute><Layout><Planets/></Layout></ProtectedRoute>} />
+                    <Route path="/favoritos" element={<ProtectedRoute><Layout><SelectionFavorite/></Layout></ProtectedRoute>} />
                     {/* Maneja rutas no existentes */}
-                    <Route path="*" element={<Navigate to="/" />} />
+                    <Route path="*" element={<NotFound/>} />
                 </Routes>
             </BrowserRouter>
         </>

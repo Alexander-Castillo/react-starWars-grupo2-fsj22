@@ -2,7 +2,7 @@ import * as yup from 'yup';
 
 export const SpecialCharacter = /[#$%&+\-@ÀÁÂÄÃÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝŸàáâäãåçèéêëìíîïñòóôõöøùúûüýÿ]/;
 
-export const RegisterSchema = yup.object({
+export const RegisterSchema = yup.object().shape({
     user: yup.string().required('Registrar tu nombre joven Padawan, debes!'),
     email: yup.string().email('Correo no valido').required('Ingresar tu correo para entrar en la fuerza debes.'),
     pass: yup.string().required('Crear una clave de seguridad joven Padawan.')

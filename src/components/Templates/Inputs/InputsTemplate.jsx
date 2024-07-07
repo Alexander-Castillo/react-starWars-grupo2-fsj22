@@ -12,7 +12,7 @@ export const InputTemplate =({ label, type = 'text', name, placeholder, register
             <div className="input-group">
                 <input type={ showPass ? 'text' : type }
                     id={name}
-                    className={`form-control form-control-lg bg-dark text-white ${errors[name] ? 'is-invalid' : ''}`}
+                    className={`form-control form-control-lg fondtext text-white bg-dark ${errors[name] ? 'is-invalid' : ''}`}
                     placeholder={placeholder}
                     {...register(name)}
                     onBlur={()=>trigger(name)}
