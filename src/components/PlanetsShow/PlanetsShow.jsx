@@ -1,9 +1,74 @@
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from'@fortawesome/react-fontawesome'
+import { faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
 
+export const PlanetsShow = () => {
+    const [planets, setPlanets] = useState([]);
 
-export const PlanetsShow =()=>{
+    const getPlanets = async () => {
+        try {
+            const response = await axios.get("https://swapi.dev/api/planets/");
+            const planetsData = response.data.results;
+            console.log(planetsData);
 
+            const planetsWithResidents = await Promise.all(planetsData.map(async (planet) => {
+                const residentRequests = planet.residents.map(url => axios.get(url));
+                const residents = await Promise.all(residentRequests);
+                return {
+                    ...planet,
+                    residents: residents.map(res => res.data)
+                };
+            }));
 
-    return(
-        <h2>logica vista de planetas</h2>
-    )
-}
+            setPlanets(planetsWithResidents);
+        } catch (error) {
+            console.log("Error: " + error);
+        }
+    };
+
+    useEffect(() => {
+        getPlanets();
+    }, []);
+
+    return (
+        <div className="container mt-4">
+            <div className="row">
+                {planets.map((planet, index) => (
+                    <div key={index} className="col-md-4">
+                        <div className="card mb-4">
+                            <div className="card-body">
+                                <h5 className="card-title">{planet.name}</h5>
+                                <p className="card-text"><strong>Climate:</strong> {planet.climate}</p>
+                                <p className="card-text"><strong>Diameter:</strong> {planet.diameter}</p>
+                                <p className="card-text"><strong>Gravity:</strong> {planet.gravity}</p>
+                                <p className="card-text"><strong>Terrain:</strong> {planet.terrain}</p>
+                                <p className="card-text"><strong>Population:</strong> {planet.population}</p>
+                                <p className="card-text"><strong>Orbital Period:</strong> {planet.orbital_period}</p>
+                                <p className="card-text"><strong>Rotation Period:</strong> {planet.rotation_period}</p>
+                                <h6>Residents:</h6>
+                                <ul>
+                                    {planet.residents.length > 0 ? (
+                                        planet.residents.map((resident, idx) => (
+                                            <li key={idx}>{resident.name}</li>
+                                        ))
+                                    ) : (
+                                        <li>No known residents</li>
+                                    )}
+                                </ul>
+
+                                <button className="btn btn-outline-danger">
+                                      <FontAwesomeIcon icon={faHeart} /> Like
+                                </button>
+                                <button className="btn btn-outline-warning">
+                                       <FontAwesomeIcon icon={faStar} /> Favorite
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};

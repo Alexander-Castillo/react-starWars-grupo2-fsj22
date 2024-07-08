@@ -7,6 +7,8 @@ import { Character } from "../Pages/Characters/Character"
 import { Planets } from "../Pages/Planets/Planets"
 import { SelectionFavorite } from "../Pages/Selection/SelectionFavorite"
 import { NotFound } from "../Pages/NotFound/NotFound"
+import { Series } from "../Pages/Series/series"
+
 
 export const Rutas=()=>{
 
@@ -23,6 +25,7 @@ export const Rutas=()=>{
                     <Route path="/home" element={<Layout><Home/></Layout>} />
                     <Route path="/personajes" element={<Layout><Character/></Layout>} />
                     <Route path="/planetas" element={<Layout><Planets/></Layout>} />
+                    <Route path="/series" element={<Layout><Series /></Layout>} />
                     <Route path="/favoritos" element={<Layout><SelectionFavorite/></Layout>} />
                     {/* Maneja rutas no existentes */}
                     <Route path="*" element={<Navigate to="/" />} />

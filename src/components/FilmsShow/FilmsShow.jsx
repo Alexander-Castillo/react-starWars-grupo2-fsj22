@@ -5,13 +5,13 @@ import { faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 
-export const CharacterShow = () => {
-    const [characters, setCharacters] = useState([]);
+export const FilmsShow = () => {
+    const [films, setFilms] = useState([]);
 
-    const getCharacters = () => {
-        axios.get("https://swapi.dev/api/people/")
+    const getFilms = () => {
+        axios.get("https://swapi.dev/api/films/")
             .then((response) => {
-                setCharacters(response.data.results);
+                setFilms(response.data.results);
                 console.log(response.data.results);
             })
             .catch((error) => {
@@ -20,21 +20,21 @@ export const CharacterShow = () => {
     };
 
     useEffect(() => {
-        getCharacters();
+        getFilms();
     }, []);
 
     return(
         <div className="container mt-4">
             <div className="row">
-                {characters.map((character, index) => (
+                {films.map((films, index) => (
                     <div key={index} className="col-md-4">
                         <div className="card mb-4">
                             <div className="card-body">
-                                <h5 className="card-title">{character.name}</h5>
-                                <p className="card-text"><strong>Height:</strong> {character.height}</p>
-                                <p className="card-text"><strong>Mass:</strong> {character.mass}</p>
-                                <p className="card-text"><strong>Hair Color:</strong> {character.hair_color}</p>
-                                <p className="card-text"><strong>Skin Color:</strong> {character.skin_color}</p>
+                                <h5 className="card-title">{films.title}</h5>
+                                <p className="card-text"><strong>episodes:</strong> {films.episode_id}</p>
+                                <p className="card-text"><strong>Director:</strong> {films.director}</p>
+                                <p className="card-text"><strong>Producer:</strong> {films.producer}</p>
+                                <p className="card-text"><strong>Release date:</strong> {films.release_date}</p>
 
                                 <button className="btn btn-outline-danger">
                                       <FontAwesomeIcon icon={faHeart} /> Like
