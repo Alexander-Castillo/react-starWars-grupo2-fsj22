@@ -7,13 +7,11 @@ import { Character } from "../Pages/Characters/Character"
 import { Planets } from "../Pages/Planets/Planets"
 import { SelectionFavorite } from "../Pages/Selection/SelectionFavorite"
 import { NotFound } from "../Pages/NotFound/NotFound"
-<<<<<<< HEAD
+
 import { Series } from "../Pages/Series/series"
 
-=======
 import { useAuth } from "../Context/AuthContext"
 import { ProtectedRoute } from "./Protected/ProtectedRoute"
->>>>>>> 4e232d9513a61c176aa37f93c95646911b4c9db3
 
 export const Rutas=()=>{
     const { loading } = useAuth();
@@ -30,18 +28,13 @@ export const Rutas=()=>{
                     <Route path="/login" element={<Login/>} />
                     <Route path="/registro" element={<Registro />} />
                     {/* Rutas para usuario logueado */}
-<<<<<<< HEAD
-                    <Route path="/home" element={<Layout><Home/></Layout>} />
-                    <Route path="/personajes" element={<Layout><Character/></Layout>} />
-                    <Route path="/planetas" element={<Layout><Planets/></Layout>} />
-                    <Route path="/series" element={<Layout><Series /></Layout>} />
-                    <Route path="/favoritos" element={<Layout><SelectionFavorite/></Layout>} />
-=======
+
                     <Route path="/home" element={<ProtectedRoute><Layout><Home/></Layout></ProtectedRoute>} />
                     <Route path="/personajes" element={<ProtectedRoute><Layout><Character/></Layout></ProtectedRoute>} />
                     <Route path="/planetas" element={<ProtectedRoute><Layout><Planets/></Layout></ProtectedRoute>} />
                     <Route path="/favoritos" element={<ProtectedRoute><Layout><SelectionFavorite/></Layout></ProtectedRoute>} />
->>>>>>> 4e232d9513a61c176aa37f93c95646911b4c9db3
+                    <Route path= "/series" element={<ProtectedRoute><Layout><Series/></Layout></ProtectedRoute>} />
+
                     {/* Maneja rutas no existentes */}
                     <Route path="*" element={<NotFound/>} />
                 </Routes>
