@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from'@fortawesome/react-fontawesome'
-import { faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
+import { FavoriteButton } from '../Button/FavoriteButton';
 
 
 
@@ -36,12 +35,7 @@ export const FilmsShow = () => {
                                 <p className="card-text"><strong>Producer:</strong> {films.producer}</p>
                                 <p className="card-text"><strong>Release date:</strong> {films.release_date}</p>
 
-                                <button className="btn btn-outline-danger">
-                                      <FontAwesomeIcon icon={faHeart} /> Like
-                                </button>
-                                <button className="btn btn-outline-warning">
-                                       <FontAwesomeIcon icon={faStar} /> Favorite
-                                </button>
+                                <FavoriteButton item={films} />
 
                             </div>
                         </div>

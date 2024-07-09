@@ -1,0 +1,37 @@
+[33mcommit 4e232d9513a61c176aa37f93c95646911b4c9db3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 3b722a7 2153b99
+Author: VictorManuelVillalta <vvillalta488@gmail.com>
+Date:   Mon Jul 8 12:38:51 2024 -0600
+
+    Merge branch 'victor'
+    "fusion de la  rama victor en main"# the commit.
+
+[33mcommit 3b722a7863cfc7704f078fcadd5d03b5718ee3e5[m[33m ([m[1;31morigin/castillo-branch[m[33m, [m[1;32mcastillo-branch[m[33m)[m
+Author: = <=>
+Date:   Sun Jul 7 12:04:04 2024 -0600
+
+    creacion del componente de inicio de sesion, context de autenticacion, funcionalidad de los botones login, logout, vista notfound, protectedroute, algunos estilos para vistas de login, registro, notfound
+
+[33mcommit 2153b994f86c8a2a36b42fbf07bc316472c1f078[m[33m ([m[1;31morigin/victor[m[33m)[m
+Author: VictorManuelVillalta <vvillalta488@gmail.com>
+Date:   Fri Jul 5 21:22:17 2024 -0600
+
+    ultima actualizacion
+
+[33mcommit 9702cc94ed3cf9e148bc886d27e7210ea24b3f3a[m
+Author: = <=>
+Date:   Fri Jul 5 15:45:35 2024 -0600
+
+    creacion del componente de registro de usuario, con formulario validado, registrado en firebase, alertas de errores con sweetalert
+
+[33mcommit 65bc3b21eec831f624f1e2f50391306b5f90fe70[m
+Author: = <=>
+Date:   Fri Jun 28 01:51:40 2024 -0600
+
+    Segundo Commit: implementacion de estructura de carpetas y rutas con react-router-dom funcional, creacion de las posibles esenciales componentes y sus vistas, de ser necesario crear mas es vital realizarlo, instalacion de yup, react-router-dom @hookform/resolvers, sweetalert2 firebase, implementacion de cdn y script de bootstrap, cdn de fontawesome y cdn de lineicons por si se necesitan usar
+
+[33mcommit ff8f6efe1607598830c3eddc0ed2d4b61c2e3050[m
+Author: Isaac Alexander Castillo Lopez <58305563+Alexander-Castillo@users.noreply.github.com>
+Date:   Fri Jun 28 06:37:04 2024 +0200
+
+    Initial commit

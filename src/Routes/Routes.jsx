@@ -12,6 +12,8 @@ import { Series } from "../Pages/Series/series"
 
 import { useAuth } from "../Context/AuthContext"
 import { ProtectedRoute } from "./Protected/ProtectedRoute"
+import { FavoritesProvider } from "../Context/FavoriteContext"
+
 
 export const Rutas=()=>{
     const { loading } = useAuth();
@@ -20,6 +22,7 @@ export const Rutas=()=>{
     }
     return(
         <>
+            <FavoritesProvider>
             <BrowserRouter>
                 <Routes>
                     {/* Redirige a /login como ruta por defecto */}
@@ -39,6 +42,7 @@ export const Rutas=()=>{
                     <Route path="*" element={<NotFound/>} />
                 </Routes>
             </BrowserRouter>
+            </FavoritesProvider>
         </>
     )
 }

@@ -1,0 +1,18 @@
+.navbar {
+    background: #000;
+    border-bottom: 2px solid #ffd700;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+.navbar .navbar-toggler-icon {
+    filter: invert(1);
+}
+@import url('./assets/fonts/StarJedi.css');

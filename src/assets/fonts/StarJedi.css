@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Star Jedi';
+    src: url('./Starjedi.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Star Jedi';
+    font-weight: bold;
+    src: url('./Starjedi.ttf') format('truetype');
+}
