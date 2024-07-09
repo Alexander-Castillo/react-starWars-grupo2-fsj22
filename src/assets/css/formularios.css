@@ -1,0 +1,60 @@
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.input-group-append {
+    position: absolute;
+    right: 10px; /* Ajusta esta distancia según necesites */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.input-group-append .btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input-group-append .btn .fa {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+.fondo{
+    background-image: url('../images/img/fondog.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.auth-container, .fondtext{
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+    
+}
+.wars{
+    width: 200px;
+    height: auto;
+    border-radius: 1rem;
+}
+.radius{
+    border-radius: 1rem;
+}
+.form-control::placeholder {
+    color: #fff; /* Texto de marcador blanco personalizado */
+}
+ul {
+    list-style: none;
+}
